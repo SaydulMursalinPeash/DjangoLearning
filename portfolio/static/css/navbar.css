@@ -6,10 +6,10 @@
     padding: 0;
     margin: 0;
     font-weight: 800;
-    color: rgb(253, 203, 37);
+    color: rgb(255, 53, 53);
     font-family: 'Titillium Web', sans-serif;
     font-size: 28px;
-    letter-spacing: 7px;
+    letter-spacing: 4px;
 }
 .navbar-brand{
     padding: 2px;
@@ -29,8 +29,7 @@
 }
 .nav-link{
     margin: 0;
-    display: flex;
-    justify-content: center;
+    padding-left: 100px;
     height: 30px;
     padding: 0;
 
