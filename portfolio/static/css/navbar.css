@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
+
+
+.navbar-brand #logo{
+    padding: 0;
+    margin: 0;
+    font-weight: 800;
+    color: rgb(253, 203, 37);
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 28px;
+    letter-spacing: 7px;
+}
+.navbar-brand{
+    padding: 2px;
+}
+.nav-link p{
+    color: rgb(251, 251, 251);
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    padding: 5px 15px;
+    width: fit-content;
+    border-radius: 3px;
+    margin: 0;
+}
+.nav-link p:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 68, 164);
+}
+.nav-link{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    padding: 0;
+
+}
