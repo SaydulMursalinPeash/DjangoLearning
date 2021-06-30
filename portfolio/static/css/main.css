@@ -3,6 +3,7 @@
 		}
 
 		body{
+
 			
 		}
 
@@ -18,4 +19,14 @@
 
 		#orders-pending{
 			background-color: #7CD1C0;
+		}
+		#out{
+
+			background-color: #6d6d94;
+		}
+		table{
+			border-radius: 3px;
+		}
+		tr:nth-child(1){
+			background-color: #6d6d94;
 		}

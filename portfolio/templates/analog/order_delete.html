@@ -1,0 +1,14 @@
+{% extends 'analog/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="delete_container" style="position: relative;height: 100vh;width: 100%;display: flex;align-items: center;flex-direction: column;justify-content: center;">
+        <p style="color: #4476fa;font-weight: bold">Are you sure you want to delete {{ order.product.name }} ?</p>
+        <hr>
+    <form method="post" style="display: flex;flex-direction: row" action="{% url 'delete_order' order.id %}">
+        {% csrf_token %}
+        <a href="{% url 'home' %}" class="btn btn-sm btn-warning" style="width: 100px;color: #063976;font-family: Robot, sans-serif">Cancel</a>
+        <input type="submit" value="Confirm"  style="width: 100px;margin-left: 15px;" class="btn btn-sm btn-danger">
+
+    </form>
+    </div>
+{% endblock %}

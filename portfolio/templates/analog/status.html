@@ -8,7 +8,10 @@
 			  		<h5 class="card-title" style="font-size: 15px;">Total Orders</h5>
 			  	</div>
 			  	<div class="card-body">
-			    	<h3 class="card-title"></h3>
+			    	<h3 class="card-title">
+						{{order|length}}
+						
+					</h3>
 			  	</div>
 			</div>
 		</div>
@@ -21,7 +24,7 @@
 			  		<h5 class="card-title" style="font-size: 15px;">Orders Delivered</h5>
 			  	</div>
 			  	<div class="card-body">
-			    	<h3 class="card-title"></h3>
+			    	<h3 class="card-title">{{ delevered|length }}</h3>
 			  	</div>
 			</div>
 		</div>
@@ -34,7 +37,19 @@
 			  		<h5 class="card-title" style="font-size: 15px;">Orders Pending</h5>
 			  	</div>
 			  	<div class="card-body">
-			    	<h3 class="card-title"></h3>
+			    	<h3 class="card-title">{{ pending|length }}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="out">
+			  	<div class="card-header">
+			  		<h5 class="card-title" style="font-size: 15px;">Out for delevery</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ out|length }}</h3>
 			  	</div>
 			</div>
 		</div>
