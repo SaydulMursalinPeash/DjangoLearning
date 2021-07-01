@@ -19,14 +19,14 @@
         }
         .form_container{
             position:relative;
-            width: 500px;
+            width: 400px;
             height: 500px;
             border-radius: 50px;
             padding: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.06),transparent);
+            background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.83),transparent);
         }
         #submit_btn{
             height: 25px;
@@ -42,17 +42,13 @@
 
         }
         #submit_btn:hover{
-            background-color: #6d6d94;
-        }
-        #submit_btn:active{
-            border: 2px solid gray;
+            background-color: #ffe676;
         }
         form{
-            display: flex;
-            flex-direction: column;
+            
         }
         select{
-            width: 200px;
+            width: 150px;
             height: 25px;
             border: none;
             outline: none;

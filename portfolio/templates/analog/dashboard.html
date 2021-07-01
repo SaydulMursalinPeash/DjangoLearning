@@ -34,14 +34,14 @@
 		<h5 style="font-size: 15px;">LAST 5 ORDERS</h5>
 		<hr>
 		<div class="card card-body">
-			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_order' %}">Create Order</a>
+			
 			<table class="table table-sm">
-				<tr style="background-color: rgba(0, 0, 0, 0.286);">
-					<th><p style="font-size: 14px;">Product</p></th>
-					<th><p style="font-size: 14px;">Date of order</p></th>
-					<th><p style="font-size: 14px;">Status</p></th>
-					<th><p style="font-size: 14px;">Update</p></th>
-					<th><p style="font-size: 14px;">Remove</p></th>
+				<tr style="background-color: rgba(255, 57, 57, 0.286); height: fit-content; border-radius: 5px;">
+					<th><p style="font-size: 14px ;padding: 0;margin: 0;">Product</p></th>
+					<th><p style="font-size: 14px;padding: 0;margin: 0;">Date of order</p></th>
+					<th><p style="font-size: 14px;padding: 0;margin: 0;">Status</p></th>
+					<th><p style="font-size: 14px;padding: 0;margin: 0;">Update</p></th>
+					<th><p style="font-size: 14px;padding: 0;margin: 0;">Remove</p></th>
 				</tr>
 				{% for i in order %}
 					<tr>

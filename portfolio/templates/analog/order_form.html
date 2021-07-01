@@ -1,11 +1,22 @@
 {% extends 'analog/main.html' %}
+{% load static %}
 {% block content %}
-<div class="container">
-    <div class="form_container">
+<div class="container" >
+    <div class="form_container" style="background-color: rgb(122, 13, 58); width: fit-content;
+    height: fit-content;overflow: hidden;border-radius: 30px;padding-top: 30px; box-shadow: -2px 1px 10px black;">
         <form method="post">
             {% csrf_token %}
-            {{ form }}
-            <input type="submit" name="submit" id="submit_btn">
+            {{ formset.management_form }}
+            {% for form in formset %}
+            <div style="display: flex;flex-direction: row; width: 600px;justify-content: space-around;">
+                {{ form }}
+            </div>
+            <hr>
+            {% endfor %}
+            
+            <input type="submit" name="submit" id="submit_btn"  style="margin-top: 15px; font-size: 14px;
+            position: absolute; bottom: 0;
+            width: 100%; margin-left: 0;left: 0;height: 35px;background-color: rgba(0, 0, 0, 0.415); color: rgb(15, 75, 179);font-size: 20px;font-family: 'Akaya Kanadaka', cursive;">
 
         </form>
     </div>
