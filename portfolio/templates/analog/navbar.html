@@ -1,3 +1,44 @@
+{% load static %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+
+
+    .profile{
+        display: flex;
+        width: 200px;
+        justify-content: space-between;
+        position: absolute; right: 20px;
+
+        align-items: center;
+    }
+    #profile_name{
+        padding: 0;
+        margin: 0;
+    }
+    #profile_name p{
+        color: #f8f8f8;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-family: 'Zen Tokyo Zoo', cursive;
+    }
+    #logo{
+        font-family: 'Righteous', cursive;
+    }
+    @media only screen and (max-width:992px){
+        .profile{
+            position: absolute;
+            right: 50px;
+            flex-direction: column;
+            top: 50px;
+
+        }
+    }
+</style>
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#"><p id="logo">Analog</p></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,5 +56,10 @@
         <a class="nav-link" href="#"><p>Customers</p></a>
       </li>
     </ul>
+      <div class="profile">
+        <span id="profile_name"><p>{{ request.user.username }}</p></span>
+        <span id="logout"><a id="logout_btn" href="{% url 'log_out' %}" class="btn btn-sm btn-danger">Log out</a> </span>
+    </div>
   </div>
+
 </nav>

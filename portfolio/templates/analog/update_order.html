@@ -1,10 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'analog/main.html' %}
+{% load static %}
+{% block content %}
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+
+    #order-form {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+
+    }
+    .container{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+    }
+    .form_container{
+        background-color: #4476fa;
+        border-radius: 10px;
+        overflow: hidden;
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: -2px 2px 10px black;
+        background: linear-gradient(to right bottom,#063976,#4476fa);
+
+    }
+    #order-form{
+        margin-bottom:40px ;
+    }
+    #order-form select{
+        padding: 0;
+        margin:0;
+        border: none;
+        outline: none;
+        background-color: #f7ba5b;
+        height: 31px;
+        width:100%;
+        position: relative;
+        font-family: 'Ubuntu', sans-serif;
+        border-radius: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #order-form label{
+        color: #f8f8f8;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .table_title{
+        height: 50px;
+        width: 100%;
+        position: relative;
+        background-color: rgba(6, 57, 118, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f7ba5b;
+        font-size: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: 'Kanit', sans-serif;
+
+    }
+    input[type=submit]{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 35px;
+        width: 100%;
+        background-color: rgba(6, 57, 118, 0.32);
+        border: none;
+        outline: none;
+        font-family: 'Ubuntu', sans-serif;
+        color: #f7ba5b;
+    }
+    input[type=submit]:hover{
+        background-color: darkblue;
+    }
+
+    </style>
+<div class="container" >
+    <div class="form_container" style="background: linear-gradient(to right bottom,rgb(96, 13, 50),rgb(54, 0, 33));">
+        <p class="table_title">Upadate your product</p>
+        <form method="post" id="order-form">
+            {% csrf_token %}
+
+            {{ form }}
+            <input type="submit" name="submit"  value="Update">
+
+        </form>
+    </div>
+</div>
+{% endblock %}

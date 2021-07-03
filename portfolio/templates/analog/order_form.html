@@ -1,84 +1,9 @@
 {% extends 'analog/main.html' %}
 {% load static %}
 {% block content %}
-    <style>
-    *{
-            padding: 0;
-            margin:0;
-            box-sizing: border-box;
-
-        }
-
-        .container{
-            position: relative;
-            height: 100vh;
-            width: 100vw;
-
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-
-        }
-        .form_container{
-            background-color: rgb(122, 13, 58);
-             width: fit-content;
-            height: fit-content;
-            overflow: hidden;
-            border-radius: 30px;
-            padding-top: 30px;
-             box-shadow: -2px 1px 10px black;
-
-
-        }
-
-        #submit_btn:hover{
-            background-color: #ffe676;
-        }
-        #order_form{
-            align-items: center;
-            padding: 15px;
-            margin: 0;
-            position: relative;
-            height: fit-content;
-            width: fit-content;
-
-
-
-        }
-        select{
-            width: 150px;
-            height: 25px;
-            border: none;
-            outline: none;
-            border-radius: 3px;
-            margin-bottom: 10px;
-            padding-left: 10px;
-            background-color: rgba(150, 255, 255, 0.25);
-            font-family: Roboto, sans-serif
-        }
-        input[type=text]{
-            width: 150px;
-            height: 25px;
-            border: none;
-            outline: none;
-            border-radius: 3px;
-            margin-bottom: 10px;
-            padding-left: 10px;
-            background-color: rgba(150, 255, 255, 0.25);
-            font-family: Roboto, sans-serif
-        }
-        select:focus{
-            background-color: #6d6d94;
-        }
-        label{
-            color: white;
-        }
-    </style>
 <div class="container" >
     <div class="form_container" style="background: linear-gradient(to right bottom,rgb(96, 13, 50),rgb(54, 0, 33));">
-        <form method="post">
+        <form method="post" id="order_form">
             {% csrf_token %}
             {{ formset.management_form }}
             {% for form in formset %}
