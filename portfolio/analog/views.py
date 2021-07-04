@@ -9,14 +9,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-
+from .c_decorators import authenticated_user
 
 # Create your views here.
 
-
+@authenticated_user
 def LogIn(request):
-    if request.user.is_authenticated:
-        return redirect('/')
     if request.method == 'POST':
         uname = request.POST.get('username')
         password = request.POST.get('password')
@@ -136,3 +134,7 @@ def deleteOrder(request, pk):
 
     context = {'order': order}
     return render(request, 'analog/order_delete.html', context)
+
+@login_required(login_url='log_in')
+def UserPage(request):
+    return render(request,'analog/user.html')
