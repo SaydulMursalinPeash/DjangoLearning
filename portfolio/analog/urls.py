@@ -14,4 +14,5 @@ urlpatterns=[
     path('log_in/',views.LogIn,name='log_in'),
     path('log_out/',views.LogOut,name='log_out'),
     path('user/',views.UserPage,name='user_page'),
+    path('user_setting',views.settingProfile,name='user_setting'),
 ]

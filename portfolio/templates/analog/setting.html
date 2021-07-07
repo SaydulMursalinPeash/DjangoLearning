@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'analog/main.html' %}
+{% load static %}
+{% block content %}
+    <style>
+	.profile-pic{
+		width: 200px;
+		height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+        box-sizing: border-box;
+        overflow: hidden;
+	}
+    .profile-pic img{
+        width: 200px;
+        height: auto;
+    }
+</style>
+
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Profile</a>
+			<hr>
+			<h3 style="text-align: center">Account Settings</h3>
+			<hr>
+			<div class="profile-pic"><img  src="{{request.user.customer.image.url}}" ></div>
+
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card card-body">
+
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form.as_p}}
+
+			<input class="btn btn-primary" type="submit" name="Update Information">
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

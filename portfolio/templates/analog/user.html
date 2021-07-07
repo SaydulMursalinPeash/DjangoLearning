@@ -1,6 +1,47 @@
 {% extends 'analog/main.html' %}
 
 {% block content %}
+    <style>
+    #total-orders{
+			background-color: #4cb4c7;
+		}
 
-<h1>User Page</h1>
+
+		#orders-delivered{
+			background-color: #7abecc;
+		}
+
+		#orders-pending{
+			background-color: #7CD1C0;
+		}
+    </style>
+    {% include 'analog/status.html' %}
+    <div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Category</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+
+				</tr>
+				{% for i in orders %}
+				<tr>
+					<td>{{ i.product }}</td>
+					<td>{{ i.product.catagory }}</td>
+					<td>{{ i.date_creates }}</td>
+					<td>{{ i.status }}</td>
+
+
+
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
 {% endblock %}
