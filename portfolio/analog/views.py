@@ -120,14 +120,14 @@ def createOrder(request, pk):
 def updateOrder(request, pk):
     order = Order.objects.get(id=pk)
     form = OrderForm(instance=order)
-
+    cont = {'update_form': form}
     if request.method == 'POST':
         form = OrderForm(request.POST, instance=order)
         if form.is_valid():
             form.save()
             return redirect('/')
-    context = {'form': form}
-    return render(request, 'analog/update_order.html', context)
+
+    return render(request,'analog/update_order.html',cont)
 
 
 @login_required(login_url='log_in')

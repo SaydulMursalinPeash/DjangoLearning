@@ -93,7 +93,7 @@
         <p class="table_title">Upadate your product</p>
         <form method="post" id="order-form">
             {% csrf_token %}
-            {{ form }}
+            {{ update_form }}
             <input type="submit" name="submit"  value="Update">
 
         </form>
